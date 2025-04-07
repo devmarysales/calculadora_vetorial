@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Calculadora Vetorial com Gráficos</title>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <h1>Calculadora Vetorial Interativa</h1>
+    <p class="subtitulo">Entenda o cálculo vetorial e visualize o resultado em gráficos 2D e 3D.</p>
+  </header>
+
+  <section class="explicacao">
+    <h2>📘 O que é Cálculo Vetorial?</h2>
+    <p>
+      Cálculo vetorial é uma área da matemática que estuda vetores e operações entre eles, como soma, subtração, produto escalar e produto vetorial. <br><br>
+      O <strong>produto vetorial</strong> entre dois vetores tridimensionais A e B resulta em um novo vetor perpendicular a ambos. Ele é útil para encontrar a normal de uma superfície, área de figuras espaciais e muito mais.
+    </p>
+    <p>
+      Para calcular o produto vetorial de A = (ax, ay, az) e B = (bx, by, bz), usamos a fórmula:
+    </p>
+    <pre>
+A × B = (ay * bz - az * by, az * bx - ax * bz, ax * by - ay * bx)
+    </pre>
+    <h2>🔷 O que é um Paralelogramo?</h2>
+<p>
+  Um <strong>paralelogramo</strong> é uma figura geométrica plana formada por dois pares de lados paralelos. <br>
+  No contexto do Cálculo Vetorial, quando temos dois vetores <strong>A</strong> e <strong>B</strong> partindo da mesma origem, eles formam os lados adjacentes de um paralelogramo no espaço tridimensional.
+</p>
+
+
+<p>
+  A <strong>área do paralelogramo</strong> é dada pelo módulo (norma) do vetor resultante do <strong>produto vetorial</strong> entre A e B:
+</p>
+
+<pre>
+Área = |A × B|
+</pre>
+
+<p>
+  Para calcular isso, usamos a fórmula do produto vetorial:
+</p>
+
+<pre>
+A = (ax, ay, az)
+B = (bx, by, bz)
+
+A × B = (ay * bz - az * by, az * bx - ax * bz, ax * by - ay * bx)
+
+Área = √[(A × B) · (A × B)] = √(cx² + cy² + cz²)
+</pre>
+
+<p>
+  Onde (cx, cy, cz) são as coordenadas do vetor A × B. O resultado da raiz quadrada é a <strong>área do paralelogramo</strong> em unidades quadradas.
+</p>
+
+<p>
+  E como bônus, a <strong>área do triângulo</strong> formado por A e B é simplesmente a metade disso:
+</p>
+
+<pre>
+Área do triângulo = |A × B| / 2
+</pre>
+
+  </section>
+
+  <section class="formulario">
+    <h2>🧮 Insira os vetores</h2>
+
+    <div class="vetor">
+      <h3>Vetor A</h3>
+      <input type="number" id="ax" placeholder="x">
+      <input type="number" id="ay" placeholder="y">
+      <input type="number" id="az" placeholder="z">
+    </div>
+
+    <div class="vetor">
+      <h3>Vetor B</h3>
+      <input type="number" id="bx" placeholder="x">
+      <input type="number" id="by" placeholder="y">
+      <input type="number" id="bz" placeholder="z">
+    </div>
+
+    <button onclick="calcular()">Calcular</button>
+    <button onclick="location.reload()">Limpar Tudo</button>
+  </section>
+
+  <section class="resultado" id="resultado"></section>
+
+  <section class="graficos">
+    <h2>📊 Gráfico 3D</h2>
+    <div id="grafico" style="width: 100%; height: 500px;"></div>
+
+    <h2>📈 Gráfico 2D (projeção XY)</h2>
+    <div id="grafico2d" style="width: 100%; height: 500px;"></div>
+  </section>
+
+  <footer>
+    <p>Feito com 💜 por Marilya Sales </p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
