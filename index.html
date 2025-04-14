@@ -17,71 +17,69 @@
     <h2>📘 O que é Cálculo Vetorial?</h2>
     <p>
       Cálculo vetorial é uma área da matemática que estuda vetores e operações entre eles, como soma, subtração, produto escalar e produto vetorial. <br><br>
-      O <strong>produto vetorial</strong> entre dois vetores tridimensionais A e B resulta em um novo vetor perpendicular a ambos. Ele é útil para encontrar a normal de uma superfície, área de figuras espaciais e muito mais.
+      O <strong>produto vetorial</strong> entre dois vetores tridimensionais u e v resulta em um novo vetor perpendicular a ambos. Ele é útil para encontrar a normal de uma superfície, área de figuras espaciais e muito mais.
     </p>
     <p>
-      Para calcular o produto vetorial de A = (ax, ay, az) e B = (bx, by, bz), usamos a fórmula:
+      Para calcular o produto vetorial de u = (ux, uy, uz) e v = (vx, vy, vz), usamos a fórmula:
     </p>
     <pre>
-A × B = (ay * bz - az * by, az * bx - ax * bz, ax * by - ay * bx)
+u × v = (uy * vz - uz * vy, uz * vx - ux * vz, ux * vy - uy * vx)
     </pre>
     <h2>🔷 O que é um Paralelogramo?</h2>
-<p>
-  Um <strong>paralelogramo</strong> é uma figura geométrica plana formada por dois pares de lados paralelos. <br>
-  No contexto do Cálculo Vetorial, quando temos dois vetores <strong>A</strong> e <strong>B</strong> partindo da mesma origem, eles formam os lados adjacentes de um paralelogramo no espaço tridimensional.
-</p>
+    <p>
+      Um <strong>paralelogramo</strong> é uma figura geométrica plana formada por dois pares de lados paralelos. <br>
+      No contexto do Cálculo Vetorial, quando temos dois vetores <strong>u</strong> e <strong>v</strong> partindo da mesma origem, eles formam os lados adjacentes de um paralelogramo no espaço tridimensional.
+    </p>
 
+    <p>
+      A <strong>área do paralelogramo</strong> é dada pelo módulo (norma) do vetor resultante do <strong>produto vetorial</strong> entre u e v:
+    </p>
 
-<p>
-  A <strong>área do paralelogramo</strong> é dada pelo módulo (norma) do vetor resultante do <strong>produto vetorial</strong> entre A e B:
-</p>
+    <pre>
+Área = |u × v|
+    </pre>
 
-<pre>
-Área = |A × B|
-</pre>
+    <p>
+      Para calcular isso, usamos a fórmula do produto vetorial:
+    </p>
 
-<p>
-  Para calcular isso, usamos a fórmula do produto vetorial:
-</p>
+    <pre>
+u = (ux, uy, uz)
+v = (vx, vy, vz)
 
-<pre>
-A = (ax, ay, az)
-B = (bx, by, bz)
+u × v = (uy * vz - uz * vy, uz * vx - ux * vz, ux * vy - uy * vx)
 
-A × B = (ay * bz - az * by, az * bx - ax * bz, ax * by - ay * bx)
+Área = √[(u × v) · (u × v)] = √(cx² + cy² + cz²)
+    </pre>
 
-Área = √[(A × B) · (A × B)] = √(cx² + cy² + cz²)
-</pre>
+    <p>
+      Onde (cx, cy, cz) são as coordenadas do vetor u × v. O resultado da raiz quadrada é a <strong>área do paralelogramo</strong> em unidades quadradas.
+    </p>
 
-<p>
-  Onde (cx, cy, cz) são as coordenadas do vetor A × B. O resultado da raiz quadrada é a <strong>área do paralelogramo</strong> em unidades quadradas.
-</p>
+    <p>
+      E como bônus, a <strong>área do triângulo</strong> formado por u e v é simplesmente a metade disso:
+    </p>
 
-<p>
-  E como bônus, a <strong>área do triângulo</strong> formado por A e B é simplesmente a metade disso:
-</p>
-
-<pre>
-Área do triângulo = |A × B| / 2
-</pre>
-
+    <pre>
+Área do triângulo = |u × v| / 2
+    </pre>
   </section>
 
   <section class="formulario">
     <h2>🧮 Insira os vetores</h2>
 
     <div class="vetor">
-      <h3>Vetor A</h3>
-      <input type="number" id="ax" placeholder="x">
-      <input type="number" id="ay" placeholder="y">
-      <input type="number" id="az" placeholder="z">
+      <h3>Vetor u</h3>
+      <input type="number" id="ux" placeholder="x">
+      <input type="number" id="uy" placeholder="y">
+      <input type="number" id="uz" placeholder="z">
     </div>
 
     <div class="vetor">
-      <h3>Vetor B</h3>
-      <input type="number" id="bx" placeholder="x">
-      <input type="number" id="by" placeholder="y">
-      <input type="number" id="bz" placeholder="z">
+      <h3>Vetor v</h3>
+      <input type="number" id="vx" placeholder="x">
+      <input type="number" id="vy" placeholder="y">
+      <input type="number" id="vz" placeholder="z">
     </div>
 
     <button onclick="calcular()">Calcular</button>
@@ -99,7 +97,7 @@ A × B = (ay * bz - az * by, az * bx - ax * bz, ax * by - ay * bx)
   </section>
 
   <footer>
-    <p>Feito com 💜 por Marilya Sales </p>
+    <p>Feito com 💜 por Marilya Sales</p>
   </footer>
 
   <script src="script.js"></script>
